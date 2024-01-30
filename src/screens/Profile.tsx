@@ -2,9 +2,10 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { useRoute } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { RootStackParamsList } from '../libs/Navigation/NavigationScreens'
+import RootStackParams from '../types/navigationStack/RootStackParams'
+
 interface ProfileScreenProps{
-  navigation:NativeStackNavigationProp<RootStackParamsList,'Profile'>
+  navigation:NativeStackNavigationProp<RootStackParams,'Profile'>
 }
 const Profile = ({navigation}:ProfileScreenProps) => {
   const route=useRoute()
