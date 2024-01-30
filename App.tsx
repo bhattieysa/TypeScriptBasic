@@ -1,48 +1,37 @@
-import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-import {
-  Colors,
-
-} from 'react-native/Libraries/NewAppScreen';
-import BasicFunctionalComponent from './src/components/BasicFunctionalComponent';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './src/screens/Home';
+import Profile from './src/screens/Profile';
 
 
+export type RootStackParamsList = {
+  Home: undefined,
+  Profile: {
+    name:string,
+    email:string
+  },
+
+}
 
 
+const Stack = createNativeStackNavigator<RootStackParamsList>()
+const App = () => {
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.black : Colors.white,
-  };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
+    
+
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='Home' component={Home} />
+        <Stack.Screen name='Profile' component={Profile} />
       
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-<BasicFunctionalComponent name='eysa' email='assa' age={10}/>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+      </Stack.Navigator>
+
+    </NavigationContainer>
+
+
   );
 }
 
