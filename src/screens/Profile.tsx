@@ -2,7 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { useRoute } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { RootStackParamsList } from '../../App'
+import { RootStackParamsList } from '../libs/Navigation/NavigationScreens'
 interface ProfileScreenProps{
   navigation:NativeStackNavigationProp<RootStackParamsList,'Profile'>
 }
