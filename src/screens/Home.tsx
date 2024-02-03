@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import ROUTES from '../ROUTES'
@@ -26,11 +26,13 @@ const Home = ({navigation}:HomeScreenProps) => {
   const [user,setUser]=useState<user>({name:'',age:0})
   //array state defination in TS
   const [items,setItem]=useState<item[]>([])
+//reference defination in TS
+  const ref=useRef<Text>(null)
 
 
   return (
     <View>
-      <Text onPress={()=>{
+      <Text ref={ref} onPress={()=>{
 
        navigation.navigate(ROUTES.PROFILE,{name: 'eysa azhar', email: 'eysaazhar@yahoo.com' });
       }}>Home</Text>
