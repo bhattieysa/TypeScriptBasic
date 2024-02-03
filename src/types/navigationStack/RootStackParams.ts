@@ -1,9 +1,9 @@
-import profileParams from "./ProfileParams";
+import ProfileParams from "./NavigationStackParams";
 
 type RootStackParams = {
    
     Home: undefined,
-    Profile: profileParams
+    Profile: ProfileParams
 };
 
 export default RootStackParams;

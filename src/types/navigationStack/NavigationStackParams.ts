@@ -1,4 +1,4 @@
-type profileParams = {
+interface ProfileParams {
    
 
 
@@ -7,4 +7,4 @@ type profileParams = {
 
 };
 
-export default profileParams;
+export default ProfileParams;
